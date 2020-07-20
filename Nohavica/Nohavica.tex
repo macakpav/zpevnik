@@ -6,6 +6,38 @@
 \ifodd\value{page}{
 	
 	\begin{multicols}{2}
+		
+		\newsong{Hlídač krav}{Nohavica}
+		\begin{guitar}
+			\input{Nohavica/Hlidac_krav.tex}
+		\end{guitar}
+		
+		\slpc
+		
+		\newsong{Moritury te salutant}{Kryl}
+		\begin{guitar}
+			\input{Kryl/Moritury.tex}
+		\end{guitar}		
+	\end{multicols}
+	
+	\begin{multicols}{2}
+		\newsong{Milionář}{Nohavica}
+		\begin{guitar}
+			\input{Nohavica/Milionar.tex}
+		\end{guitar}
+	\end{multicols}
+	
+	\newsong{Jdou po mně jdou}{Nohavica}
+	\begin{multicols}{2}
+		\begin{guitar}
+			\input{Nohavica/Jdou_po_mne.tex}
+		\end{guitar}
+	\end{multicols}
+	\newpage
+	
+} \else {
+	
+	\begin{multicols}{2}
 		\newsong{Milionář}{Nohavica}
 		\begin{guitar}
 			\input{Nohavica/Milionar.tex}
@@ -38,39 +70,7 @@
 	\end{multicols}
 	
 	
-} \else {
-	
-	\begin{multicols}{2}
-		
-		\newsong{Hlídač krav}{Nohavica}
-		\begin{guitar}
-			\input{Nohavica/Hlidac_krav.tex}
-		\end{guitar}
-		
-		\slpc
-		
-		\newsong{Moritury te salutant}{Kryl}
-		\begin{guitar}
-			\input{Kryl/Moritury.tex}
-		\end{guitar}		
-	\end{multicols}
-	
-	\begin{multicols}{2}
-		\newsong{Milionář}{Nohavica}
-		\begin{guitar}
-			\input{Nohavica/Milionar.tex}
-		\end{guitar}
-	\end{multicols}
-	
-	\newsong{Jdou po mně jdou}{Nohavica}
-	\begin{multicols}{2}
-		\begin{guitar}
-			\input{Nohavica/Jdou_po_mne.tex}
-		\end{guitar}
-	\end{multicols}
-	\newpage
-	
-}\fi
+} \fi
 
 \newsong{Kometa}{Nohavica}
 \begin{multicols}{2}
