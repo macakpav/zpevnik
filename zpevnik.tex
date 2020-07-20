@@ -1,0 +1,148 @@
+% arara: pdflatex: { synctex: yes }
+% arara: bibtex
+% arara: pdflatex
+% arara: pdflatex
+% arara: makeindex
+% arara: pdflatex
+% arara: makeindex
+
+\documentclass[guitar,12pt,a4paper,twoside,openright]{article}
+
+\usepackage{graphicx}
+\usepackage{gchords}
+\usepackage{guitar}
+
+\usepackage{multicol}
+\usepackage{makeidx}
+\usepackage[columns=3]{idxlayout}
+\usepackage{tocloft}
+\usepackage[linktocpage=true]{hyperref}
+
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{0pt}{6pt}
+
+\newcounter{NoS} % number of songs counter
+\newcommand{\newsong}[2]
+{
+	\section{#1} 
+	\index{#1} 
+	\stepcounter{NoS}
+%	\large
+}
+
+\newcommand*\cleartoleftpage{%
+	\clearpage
+	\ifodd\value{page}\hbox{}\newpage\fi
+}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0ex}{-2ex}
+
+%\def\guitarEndLine{\par\leavevmode}
+%\renewcommand{\guitarEndLine}{\par}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{-10pt}
+\renewcommand{\baselinestretch}{0.8}
+
+\makeindex
+\AtBeginDocument{\renewcommand\indexname{Obsah}}
+
+\newcommand{\includesongs}[1]{\include{#1/#1}}
+
+\newcommand{\slpc}{\vfill\null\columnbreak} % new column
+\renewcommand{\familydefault}{\sfdefault}
+
+\renewcommand\guitarPreAccord{\bf\Large\strut}
+
+\renewcommand{\baselinestretch}{1.5}  %individually {\setstretch{1.0} ........... }
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage{ragged2e}
+\newenvironment{raggedmulticols}[1]{%
+	\RaggedRight
+	\begin{multicols}{#1}%
+	}{%
+	\end{multicols}%
+}
+
+
+\usepackage[a4paper,
+inner=15mm,
+outer=10mm,% = marginparsep + marginparwidth 
+%   + 5mm (between marginpar and page border)
+top=10mm,
+bottom=20mm,
+marginparsep=5mm,
+marginparwidth=40mm,
+%showframe% for show your page design, normaly not used
+]{geometry}
+
+
+
+
+%%adding chords
+%\smallchords
+%\def\numfrets{5}
+%\begin{minipage}[c]{\linewidth} % use less space
+%
+%\chords{
+%\chord{t}{n,p3,p2,n,p1,n}{C}
+%\chord{t}{p3,p2,n,n,n,p3}{G}
+%\chord{t}{n,p3,p2,p3,p1,n}{C7}
+%\chord{t}{n,n,n,p2,p3,p2}{D}
+%\chord{t1}{n,p2,p2,p1,n,n}{F}
+%}
+%\end{minipage}
+
+
+
+\setcounter{secnumdepth}{-2}
+\renewcommand{\contentsname}{Obsah}
+
+\begin{document}
+\title{Zpěvník}
+%\author{Tvoje máma}
+\date{\today}
+\maketitle
+\newpage
+
+%\begin{multicols}{3}
+%	\tableofcontents
+%\end{multicols}
+
+\printindex
+\newpage
+
+% -------
+
+\includesongs{_adrz}
+\includesongs{Kryl}
+\includesongs{Nohavica}
+\includesongs{Waldemar}
+\includesongs{Cechomor}
+\includesongs{Chinaski}
+\includesongs{Kabat}
+\includesongs{Traband}
+\includesongs{Vypsana_fixa}
+\includesongs{UDG}
+\includesongs{Zavis}
+\includesongs{English}
+% --------
+
+
+
+
+
+\newsong{Mravenčí ukolébavka}{Další}
+\begin{multicols}{2}
+\begin{guitar}
+	\input{_adrz/Mravenci_ukolebavka.tex}
+\end{guitar}
+\end{multicols}
+\bigskip
+% --------
+
+Celkem písniček: (\arabic{NoS})
+\end{document}
