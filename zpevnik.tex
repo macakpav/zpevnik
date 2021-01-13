@@ -1,12 +1,8 @@
 % arara: pdflatex: { synctex: yes }
-% arara: bibtex
-% arara: pdflatex
-% arara: pdflatex
 % arara: makeindex
 % arara: pdflatex
-% arara: makeindex
 
-\documentclass[guitar,12pt,a4paper,twoside,openright]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 \usepackage{graphicx}
 \usepackage{gchords}
@@ -19,13 +15,14 @@
 \usepackage[linktocpage=true]{hyperref}
 
 \usepackage{titlesec}
+\usepackage{perpage}
 
 \titlespacing\section{0pt}{0pt}{6pt}
 
 \newcounter{NoS} % number of songs counter
 \newcommand{\newsong}[2]
 {
-	\section{#1} 
+	\section{#1}
 	\index{#1} 
 	\stepcounter{NoS}
 %	\large
@@ -45,10 +42,18 @@
 \setlength{\parskip}{-10pt}
 \renewcommand{\baselinestretch}{0.8}
 
+\author{Pavel Mačák}
 \makeindex
 \AtBeginDocument{\renewcommand\indexname{Obsah}}
 
-\newcommand{\includesongs}[1]{\include{#1/#1}}
+\newcounter{songGroup}
+\AddAbsoluteCounter{page}
+\newcommand{\includesongs}[1]{
+	\stepcounter{songGroup}
+	\setcounter{page}{1}
+	\renewcommand{\thepage}{\Roman{songGroup}-\arabic{page}} %-\arabic{abspage}
+	\include{#1/#1}
+}
 
 \newcommand{\slpc}{\vfill\null\columnbreak} % new column
 \renewcommand{\familydefault}{\sfdefault}
@@ -100,6 +105,7 @@ marginparwidth=40mm,
 
 \setcounter{secnumdepth}{-2}
 \renewcommand{\contentsname}{Obsah}
+\renewcommand{\thepage}{ }
 
 \begin{document}
 \title{Zpěvník}
@@ -126,7 +132,6 @@ marginparwidth=40mm,
 \includesongs{Kabat}
 \includesongs{Traband}
 \includesongs{Vypsana_fixa}
-\includesongs{UDG}
 \includesongs{Zavis}
 \includesongs{English}
 % --------
