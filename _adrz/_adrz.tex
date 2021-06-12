@@ -399,27 +399,69 @@
 \end{multicols}
 \newpage
 
-% --------
-
-\begin{multicols}{2}
-\newsong{Pomeranč}{Tři sestry}
-\begin{guitar}
-	\input{_adrz/Pomeranc.tex}
-\end{guitar}
-\end{multicols}
-\newpage
-
 
 % --------
 
+\ifodd\value{page}{
+	
+	\begin{multicols}{2}
+		\newsong{To Samo}{Další}
+		\begin{guitar}
+			\input{_adrz/To_samo.tex}
+		\end{guitar}
+	\end{multicols}
+	\newpage
+	
+	
+	\begin{multicols}{2}
+		\newsong{Pomeranč}{Tři sestry}
+		\begin{guitar}
+			\input{_adrz/Pomeranc.tex}
+		\end{guitar}
+	\end{multicols}
+	\newpage
+	
+	\begin{multicols}{2}
+		\newsong{Dajána}{Poletíme?}
+		\begin{guitar}
+			\input{_adrz/Dajana.tex}
+		\end{guitar}
+	\end{multicols}
+	\newpage
+	
+	
+} \else {
+
 \begin{multicols}{2}
-	\newsong{Dajána}{Poletíme?}
+	\newsong{Pomeranč}{Tři sestry}
 	\begin{guitar}
-		\input{_adrz/Dajana.tex}
+		\input{_adrz/Pomeranc.tex}
 	\end{guitar}
 \end{multicols}
 \newpage
 
+\begin{multicols}{2}
+	\newsong{To Samo}{Další}
+	\begin{guitar}
+		\input{_adrz/To_samo.tex}
+	\end{guitar}
+\end{multicols}
+\newpage
+
+\newsong{Jdou po mně jdou}{Nohavica}
+\begin{multicols}{2}
+	\begin{guitar}
+		\input{Nohavica/Jdou_po_mne.tex}
+	\end{guitar}
+\end{multicols}
+\newpage
+	
+	
+} \fi
+
+
+
+% --------
 
 
 
