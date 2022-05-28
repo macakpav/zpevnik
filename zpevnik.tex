@@ -15,10 +15,7 @@
 \usepackage{tocloft}
 \usepackage[linktocpage=true]{hyperref}
 
-\usepackage{titlesec}
 \usepackage{perpage}
-
-\titlespacing\section{0pt}{0pt}{6pt}
 
 \newcounter{NoS} % number of songs counter
 \newcommand{\newsong}[2]
@@ -26,6 +23,7 @@
 	\section{#1}
 	\index{#1} 
 	\stepcounter{NoS}
+	\hfill {\footnotesize#2}
 %	\large
 }
 
@@ -35,7 +33,7 @@
 }
 
 \usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0ex}{-2ex}
+\titlespacing*{\section}{0pt}{-3ex}{-3ex}
 
 %\def\guitarEndLine{\par\leavevmode}
 %\renewcommand{\guitarEndLine}{\par}
@@ -146,11 +144,13 @@ marginparwidth=40mm,
 % --------
 
 
-\newsong{Mravenčí ukolébavka}{Další}
 \begin{multicols}{2}
-\begin{guitar}
-	\input{_adrz/Mravenci_ukolebavka.tex}
-\end{guitar}
+	
+	\newsong{Mravenčí ukolébavka}{Svěrák a Uhlíř}
+	\begin{guitar}
+		\input{_adrz/Mravenci_ukolebavka.tex}
+	\end{guitar}
+
 \end{multicols}
 \bigskip
 % --------
