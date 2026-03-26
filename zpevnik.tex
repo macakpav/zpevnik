@@ -38,12 +38,12 @@
 %\def\guitarEndLine{\par\leavevmode}
 %\renewcommand{\guitarEndLine}{\par}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{-10pt}
-\renewcommand{\baselinestretch}{0.8}
+\setlength{\parskip}{-3pt}
+\renewcommand{\baselinestretch}{1.2}
 
 %\author{Pavel Mačák}
 \makeindex
-\AtBeginDocument{\renewcommand\indexname{Obsah}}
+\AtBeginDocument{\renewcommand\indexname{Obsah\newline}}
 
 \newcounter{songGroup}
 \AddAbsoluteCounter{page}
@@ -51,15 +51,13 @@
 	\stepcounter{songGroup}
 	\setcounter{page}{1}
 	\renewcommand{\thepage}{\Roman{songGroup}-\arabic{page}} %-\arabic{abspage}
-	\include{#1/#1}
+	\include{#1}
 }
 
 \newcommand{\slpc}{\vfill\null\columnbreak} % new column
 \renewcommand{\familydefault}{\sfdefault}
 
 \renewcommand\guitarPreAccord{\bf\Large\strut}
-
-\renewcommand{\baselinestretch}{1.5}  %individually {\setstretch{1.0} ........... }
 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
@@ -131,15 +129,10 @@ marginparwidth=40mm,
 
 % -------
 
-\includesongs{_adrz}
-\includesongs{Kryl}
-\includesongs{Nohavica}
-\includesongs{Chinaski}
-\includesongs{Kabat}
-\includesongs{Traband}
-\includesongs{Vypsana_fixa}
-\includesongs{Zavis}
-\includesongs{English}
+\includesongs{_adrz/_chap1}
+\includesongs{_adrz/_chap2}
+\includesongs{Zavis/Zavis}
+\includesongs{English/English}
 % --------
 
 
